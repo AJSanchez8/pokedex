@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { PokeapiService } from '../../services/pokeapi.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-busqueda',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './busqueda.component.html',
 })
 export class BusquedaComponent implements OnInit {

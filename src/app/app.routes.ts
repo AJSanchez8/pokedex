@@ -5,6 +5,6 @@ import { CuerpoComponent } from './components/cuerpo/cuerpo.component';
 
 export const routes: Routes = [
     {path:"", component:PrincipalComponent},
-    {path:"/pokemon",component:CuerpoComponent}
+    {path:"pokemon",component:CuerpoComponent}
 
 ];

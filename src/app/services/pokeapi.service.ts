@@ -30,17 +30,7 @@ export class PokeapiService {
   }
   info_tipo(){
 
-  }
+  }  
 
-  muestra_todo(){
-    this.http.get(this.url+"pokemon/"+this.nombre.toLowerCase()).subscribe((response)=>{
-      this.pokemonData=response
-      this.img_pokemon=this.pokemonData["sprites"]["other"]["official-artwork"]["front_default"]
-      this.pokemon_tipo=this.pokemonData["types"]
-      console.log(this.pokemon_tipo);
-      
-    })
-  }
-  
   constructor() {}
 }
