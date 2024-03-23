@@ -1,9 +1,10 @@
-@for (pokemon of pokemonData; track $index) {
+<div class="grid grid-cols-3 m-20 gap-20">
+    @for (pokemon of pokemonData; track $index) {
     <div class="flex items-center" style="font-family: 'Muli', sans-serif;">
         <div class="container ml-auto mr-auto flex flex-wrap items-start">
           <div class="w-full pl-5 lg:pl-2 mb-4 text-center uppercase">
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 mx-auto">
+          <div class="w-full m-2 p-2 mx-auto">
             
             <div class="bg-emerald-400 rounded-lg m-h-64 p-2 transform hover:shadow-xl transition duration-300">
               <figure class="mb-2">
@@ -95,7 +96,7 @@
     
     
 }
-
+</div>
 
 
 

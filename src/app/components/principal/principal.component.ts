@@ -24,7 +24,7 @@ tipos_api:any;
 contador=0;
 
 ngOnInit(): void {
-    this.http.get(this.url+"pokemon?limit=100000&offset=0").subscribe((response)=>{
+    this.http.get(this.url+"pokemon?limit=20&offset=20").subscribe((response)=>{
 
     this.pokemonData=response
     this.pokemonData=this.pokemonData["results"]
