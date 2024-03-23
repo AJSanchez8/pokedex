@@ -3,27 +3,79 @@
       <div class="w-full pl-5 lg:pl-2 mb-4 text-center uppercase">
       </div>
       <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 mx-auto">
-        <div class="bg-red-700 rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+        
+        <div class="bg-emerald-400 rounded-lg m-h-64 p-2 transform hover:shadow-xl transition duration-300">
           <figure class="mb-2">
-            <img class="bg-slate-100 bg-opacity-45 rounded-full p-1 h-32 mx-auto" src="../../../assets/img/4.png">
-            <!--<img src="{{pokeapiservice.img_pokemon}}" alt="" class="h-44 ml-auto mr-auto" />-->
-            
+            <img src="{{pokeapiservice.img_pokemon}}" alt="" class="h-48 z-50 duration-150 ml-auto mr-auto hover:scale-110 drop-shadow-2xl " />
           </figure>
-          <div class="rounded-lg p-4 bg-purple-700 flex flex-col">
-            <div>
-              <h5 class="text-white text-2xl font-bold leading-none uppercase text-center">
-                charizard
-                @if (pokeapiservice.pokemonData) {
-                  <p>{{pokeapiservice.pokemonData["name"]}}</p>
-                }
-              </h5>
-            </div>
-              <div class="text-lg text-white font-light">
-                <span class="text-md text-gray-950 font-bold leading-none">Tipo</span>
+          <div>
+            <h5 class="text-black text-2xl font-bold leading-none uppercase text-center">
+              @if (pokeapiservice.pokemonData) {
+                <p>{{pokeapiservice.pokemonData["name"]}}</p>
+              }
+            </h5>
+          </div>
+          <div class="rounded-lg p-4 bg-slate-50 flex flex-col">
+
+              <div class="text-lg  font-light flex flex-row m-3">
                 @for (tipo of pokeapiservice.pokemon_tipo; track $index) {
-                 <p>{{tipo}}</p> 
+                  @switch (tipo["type"]["name"]) {
+                    @case ("fire") {
+                      <img class="w-8 z-50 bg-red-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="FUEGO">
+                    }
+                    @case ("bug") {
+                      <img class="w-8 z-50 bg-green-700 rounded-full m-1 p-2" src="../../../assets/img/tipos/bug.svg" title="INSECTO">
+                    }
+                    @case ("dark") {
+                      <img class="w-8 z-50 bg-violet-950 rounded-full m-1 p-2" src="../../../assets/img/tipos/dark.svg" title="SINIESTRO">
+                    }
+                    @case ("dragon") {
+                      <img class="w-8 z-50 bg-cyan-600 rounded-full m-1 p-2" src="../../../assets/img/tipos/dragon.svg" title="DRAGON">
+                    }
+                    @case ("electric") {
+                      <img class="w-8 z-50 bg-yellow-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/electric.svg" title="ELECTRICO">
+                    }
+                    @case ("fairy") {
+                      <img class="w-8 z-50 bg-pink-300 rounded-full m-1 p-2" src="../../../assets/img/tipos/fairy.svg" title="HADA">
+                    }
+                    @case ("fighting") {
+                      <img class="w-8 z-50 bg-orange-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fighting.svg" title="LUCHADOR">
+                    }
+                    @case ("ghost") {
+                      <img class="w-8 z-50 bg-purple-600 rounded-full m-1 p-2" src="../../../assets/img/tipos/ghost.svg" title="FANTASMA">
+                    }
+                    @case ("grass") {
+                      <img class="w-8 z-50 bg-green-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/grass.svg" title="HIERBA">
+                    }
+                    @case ("ground") {
+                      <img class="w-8 z-50 bg-orange-700 rounded-full m-1 p-2" src="../../../assets/img/tipos/ground.svg" title="TIERRA">
+                    }
+                    @case ("ice") {
+                      <img class="w-8 z-50 bg-cyan-400 rounded-full m-1 p-2" src="../../../assets/img/tipos/ice.svg" title="HIELO">
+                    }
+                    @case ("normal") {
+                      <img class="w-8 z-50 bg-red-300 rounded-full m-1 p-2" src="../../../assets/img/tipos/normal.svg" title="NORMAL">
+                    }
+                    @case ("poison") {
+                      <img class="w-8 z-50 bg-purple-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="VENENO">
+                    }
+                    @case ("phychic") {
+                      <img class="w-8 z-50 bg-pink-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/psychic.svg" title="PSIQUICO">
+                    }
+                    @case ("rock") {
+                      <img class="w-8 z-50 bg-orange-950 rounded-full m-1 p-2" src="../../../assets/img/tipos/rock.svg" title="ROCK">
+                    }
+                    @case ("steel") {
+                      <img class="w-8 z-50 bg-slate-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/steel.svg" title="HIERRO">
+                    }
+                    @case ("water") {
+                      <img class="w-8 z-50 bg-blue-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/water.svg" title="AGUA">
+                    }
+                    @case ("flying") {
+                      <img class="w-8 z-50 bg-blue-200 rounded-full m-1 p-2" src="../../../assets/img/tipos/flying.svg" title="VOLADOR">
+                    }
+                  }   
                 }
-                
               </div>
               <button href="javascript:;" class="rounded-full bg-purple-900 text-white hover:bg-white hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
