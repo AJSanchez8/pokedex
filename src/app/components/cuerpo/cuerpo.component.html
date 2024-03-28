@@ -1,24 +1,30 @@
+@if (clienteservice.have_pokemon) {
 <div class="flex items-center" style="font-family: 'Muli', sans-serif;">
     <div class="container ml-auto mr-auto flex flex-wrap items-start">
       <div class="w-full pl-5 lg:pl-2 mb-4 text-center uppercase">
       </div>
       <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 mx-auto">
-        
-        <div class="bg-emerald-400 rounded-lg m-h-64 p-2 transform hover:shadow-xl transition duration-300">
+          
+        <div class="
+        bg-slate-300
+         rounded-lg m-h-64 p-2 transform hover:shadow-xl transition duration-300">
           <figure class="mb-2">
-            <img src="{{pokeapiservice.img_pokemon}}" alt="" class="h-48 z-50 duration-150 ml-auto mr-auto hover:scale-110 drop-shadow-2xl " />
+            <img src="{{clienteservice.img_cli_mostrar}}" alt="" class="h-48 z-50 duration-150 ml-auto mr-auto hover:scale-110 drop-shadow-2xl " />
           </figure>
           <div>
             <h5 class="text-black text-2xl font-bold leading-none uppercase text-center">
-              @if (pokeapiservice.pokemonData) {
-                <p>{{pokeapiservice.pokemonData["name"]}}</p>
-              }
+              <p>
+                
+                <span class="text-slate-600 mr-2">#{{clienteservice.id_cli_pokemons}}</span>
+                
+                
+                {{clienteservice.nombre_cli}}</p>
             </h5>
           </div>
-          <div class="rounded-lg p-4 bg-slate-50 flex flex-col">
+          <div class="rounded-lg p-4 bg-white flex flex-col">
 
               <div class="text-lg  font-light flex flex-row m-3">
-                @for (tipo of pokeapiservice.pokemon_tipo; track $index) {
+                @for (tipo of clienteservice.tipo_cli; track $index) {
                   @switch (tipo["type"]["name"]) {
                     @case ("fire") {
                       <img class="w-8 z-50 bg-red-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="FUEGO">
@@ -59,7 +65,7 @@
                     @case ("poison") {
                       <img class="w-8 z-50 bg-purple-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="VENENO">
                     }
-                    @case ("phychic") {
+                    @case ("psychic") {
                       <img class="w-8 z-50 bg-pink-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/psychic.svg" title="PSIQUICO">
                     }
                     @case ("rock") {
@@ -88,7 +94,8 @@
       </div>
     </div>
 </div>
+} @else {
+  <p class="text-center mt-16 text-3xl font-bold rounded bg-white w-3/4 mx-auto"> INTRODUCE EL NOMBRE o <span class="text-red-500">ID</span> DE UN POKEMON PARA VER SUS CARACTERÍSTICAS</p>
 
-
-
+}
 

@@ -1,36 +1,71 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { PokeapiService } from '../../services/pokeapi.service';
+import { Component, ContentChild, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ClienteService } from '../../services/cliente.service';
+import { PokemonClient } from 'pokenode-ts';
 
 
 @Component({
   selector: 'app-principal',
   standalone: true,
-  imports: [],
-  templateUrl: './principal.component.html',
-  styleUrl: './principal.component.css'
+  imports: [FormsModule],
+  templateUrl: './principal.component.html'
 })
+
+
 export class PrincipalComponent implements OnInit {
 
-pokeapiservice=inject(PokeapiService)
+clienterservice=inject(ClienteService)
+api = new PokemonClient()
 http=inject(HttpClient)
 
-url:string="https://pokeapi.co/api/v2/"
+
 nombre:string="";
-pokemonData:any;
 img_pokemon:string="";
 pokemon_tipo:[]=[];
 tipos_api:any;
-contador=0;
+contador=1;
+pokemon_foto_data:any
+array_pokemons:any;
+res_pokemon:any;
+pokemon_unico:any
+pokemonData:any;
+array_imagenes:any=[]
+pokemon_json:any
+id:number=0
+
+array_todos_pokemon: {id:number; name: string; img: string; }[] = [];
 
 ngOnInit(): void {
-    this.http.get(this.url+"pokemon?limit=20&offset=20").subscribe((response)=>{
 
-    this.pokemonData=response
-    this.pokemonData=this.pokemonData["results"]
+  let random = Math.floor(Math.random() * (1286 + 1));
 
-    console.log(this.pokemonData);
-    
+   
+  this.api.listPokemons(random,15).then((res)=>{
+    this.array_pokemons = res.results
+
+    res.results.map((response)=>{
+
+      this.http.get(response.url).subscribe((res_peticion_interna)=>{
+        
+        
+        this.pokemonData=res_peticion_interna
+        console.log(this.pokemonData);
+        this.id=this.pokemonData["id"]
+        this.nombre=this.pokemonData["name"]
+        this.img_pokemon=this.pokemonData["sprites"]["other"]["official-artwork"]["front_default"]
+        this.pokemon_tipo=this.pokemonData["types"]
+        
+        let poke_info={
+          id: this.id,
+          name: this.nombre,
+          img: this.img_pokemon,
+        }
+        this.array_todos_pokemon.push(poke_info)
+        
+      })
+    })       
   })
+  console.log(this.array_todos_pokemon);
 }
 }

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { PokeapiService } from '../../services/pokeapi.service';
+import { ClienteService } from '../../services/cliente.service';
 
 @Component({
   selector: 'app-cuerpo',
@@ -8,6 +8,6 @@ import { PokeapiService } from '../../services/pokeapi.service';
   templateUrl: './cuerpo.component.html'
 })
 export class CuerpoComponent {
-pokeapiservice = inject(PokeapiService)
+clienteservice = inject(ClienteService)
 
 }
