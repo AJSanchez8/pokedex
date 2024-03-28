@@ -1,1 +1,78 @@
-<p>tipos works!</p>
+<div class="w-3/4 mx-auto mt-6">
+<div class="relative overflow-x-auto sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th colspan="7" scope="col" class="px-6 py-3 text-center">
+                    Tabla de daños
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Doble de daño <strong>hacia (x2)</strong>
+                </th>
+                @for (doble_a of clienteservice.double_damage_to; track $index) {
+                    <td class="px-3 py-2">
+                    {{doble_a.name}}
+                    </td>
+                }
+
+            </tr>
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Mitad de daño <strong>hacia (1/2)</strong>
+                </th>
+                @for (mitad_a of clienteservice.half_damage_to; track $index) {
+                    <td class="px-3 py-2">
+                        {{mitad_a.name}}
+                        </td>
+                }
+
+
+            </tr>
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800  dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <strong>NO</strong> hace daño a
+                </th>
+                @for (no_a of clienteservice.no_damage_to; track $index) {
+                    <td class="px-3 py-2">
+                        {{no_a.name}}
+                        </td>
+                }
+  
+            </tr>
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800  dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <strong>Recibe (x2)</strong> doble de daño de
+                </th>
+                @for (doble_de of clienteservice.double_damage_from; track $index) {
+                    <td class="px-3 py-2">
+                        {{doble_de.name}}
+                        </td>
+                }
+            </tr>
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800  dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <strong>Recible (1/2)</strong> la mitad de daño de
+                </th>
+                @for (mitad_de of clienteservice.half_damage_from; track $index) {
+                    <td class="px-3 py-2">
+                        {{mitad_de.name}}
+                        </td>
+                }
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800  dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <strong>NO</strong> recibe de daño de
+                </th>
+                @for (no_de of clienteservice.no_damage_from; track $index) {
+                    <td class="px-3 py-2">
+                        {{no_de.name}}
+                        </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div></div>
+  

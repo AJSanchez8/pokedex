@@ -51,7 +51,6 @@ ngOnInit(): void {
         
         
         this.pokemonData=res_peticion_interna
-        console.log(this.pokemonData);
         this.id=this.pokemonData["id"]
         this.nombre=this.pokemonData["name"]
         this.img_pokemon=this.pokemonData["sprites"]["other"]["official-artwork"]["front_default"]
@@ -67,6 +66,5 @@ ngOnInit(): void {
       })
     })       
   })
-  console.log(this.array_todos_pokemon);
 }
 }

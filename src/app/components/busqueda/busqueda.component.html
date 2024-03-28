@@ -7,63 +7,63 @@
     </form>
     <form class="p-2 grid grid-cols-4 font-semibold m-auto">
         <div class="col-span-3 rounded-lg bg-blue-100 flex flex-row">
-        <select class="w-36 text-center rounded">
+        <select [(ngModel)] = "clienteService.tipo" name="tipo" class="w-36 text-center rounded">
             <option value="" disabled selected>Selecciona</option>
             @for (tipo of tipos_api; track $index) {
                 @switch (tipo["name"]) {
                     @case ("fire") {
-                      <option class="w-15 z-50 bg-red-500 rounded-full m-1 p-2" >FUEGO</option>
+                      <option class="w-15 z-50 bg-red-500 rounded-full m-1 p-2" value="fire"  >FUEGO</option>
                     }
                     @case ("bug") {
-                        <option class="w-15 z-50 bg-green-700 rounded-full m-1 p-2" >BICHO</option>
+                        <option class="w-15 z-50 bg-green-700 rounded-full m-1 p-2" value="bug" >BICHO</option>
                     }
                     @case ("dark") {
-                        <option class="w-15 z-50 bg-violet-950 rounded-full m-1 p-2" >SINIESTRO</option>
+                        <option class="w-15 z-50 bg-violet-950 rounded-full m-1 p-2" value="dark" >SINIESTRO</option>
                     }
                     @case ("dragon") {
-                        <option class="w-15 z-50 bg-cyan-600 rounded-full m-1 p-2" >DRAGON</option>
+                        <option class="w-15 z-50 bg-cyan-600 rounded-full m-1 p-2" value="dragon" >DRAGON</option>
                     }
                     @case ("electric") {
-                        <option class="w-15 z-50 bg-yellow-500 rounded-full m-1 p-2" >ELECTRICO</option>
+                        <option class="w-15 z-50 bg-yellow-500 rounded-full m-1 p-2" value="electric" >ELECTRICO</option>
                     }
                     @case ("fairy") {
-                        <option class="w-15 z-50 bg-pink-300 rounded-full m-1 p-2" >HADA</option>
+                        <option class="w-15 z-50 bg-pink-300 rounded-full m-1 p-2" value="fairy" >HADA</option>
                     }
                     @case ("fighting") {
-                        <option class="w-15 z-50 bg-orange-500 rounded-full m-1 p-2" >LUCHA</option>
+                        <option class="w-15 z-50 bg-orange-500 rounded-full m-1 p-2" value="fighting" >LUCHA</option>
                     }
                     @case ("ghost") {
-                        <option class="w-15 z-50 bg-purple-600 rounded-full m-1 p-2" >FANTASMA</option>
+                        <option class="w-15 z-50 bg-purple-600 rounded-full m-1 p-2" value="ghost" >FANTASMA</option>
                     }
                     @case ("grass") {
-                        <option class="w-15 z-50 bg-green-500 rounded-full m-1 p-2" >PLANTA</option>
+                        <option class="w-15 z-50 bg-green-500 rounded-full m-1 p-2" value="grass" >PLANTA</option>
                     }
                     @case ("ground") {
-                        <option class="w-15 z-50 bg-orange-700 rounded-full m-1 p-2" >TIERRA</option>
+                        <option class="w-15 z-50 bg-orange-700 rounded-full m-1 p-2" value="ground" >TIERRA</option>
                     }
                     @case ("ice") {
-                        <option class="w-15 z-50 bg-cyan-400 rounded-full m-1 p-2" >HIELO</option>
+                        <option class="w-15 z-50 bg-cyan-400 rounded-full m-1 p-2" value="ice" >HIELO</option>
                     }
                     @case ("normal") {
-                        <option class="w-15 z-50 bg-red-300 rounded-full m-1 p-2" >NORMAL</option>
+                        <option class="w-15 z-50 bg-red-300 rounded-full m-1 p-2" value="normal" >NORMAL</option>
                     }
                     @case ("poison") {
-                        <option class="w-15 z-50 bg-purple-500 rounded-full m-1 p-2" >VENENO</option>
+                        <option class="w-15 z-50 bg-purple-500 rounded-full m-1 p-2" value="poison" >VENENO</option>
                     }
                     @case ("psychic") {
-                        <option class="w-15 z-50 bg-pink-500 rounded-full m-1 p-2" >PSIQUICO</option>
+                        <option class="w-15 z-50 bg-pink-500 rounded-full m-1 p-2" value="psychic" >PSIQUICO</option>
                     }
                     @case ("rock") {
-                        <option class="w-15 z-50 bg-orange-950 rounded-full m-1 p-2" >ROCA</option>
+                        <option class="w-15 z-50 bg-orange-950 rounded-full m-1 p-2" value="rock" >ROCA</option>
                     }
                     @case ("steel") {
-                        <option class="w-15 z-50 bg-slate-500 rounded-full m-1 p-2" >ACERO</option>
+                        <option class="w-15 z-50 bg-slate-500 rounded-full m-1 p-2" value="steel" >ACERO</option>
                     }
                     @case ("water") {
-                        <option class="w-15 z-50 bg-blue-500 rounded-full m-1 p-2" >AGUA</option>
+                        <option class="w-15 z-50 bg-blue-500 rounded-full m-1 p-2" value="water" >AGUA</option>
                     }
                     @case ("flying") {
-                        <option class="w-15 z-50 bg-blue-200 rounded-full m-1 p-2" >VOLADOR</option>
+                        <option class="w-15 z-50 bg-blue-200 rounded-full m-1 p-2" value="flying" >VOLADOR</option>
                     }
                   }   
             }
