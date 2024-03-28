@@ -41,7 +41,25 @@ export class ClienteService {
     })
 
   }
+  info_nombre_api_con_id(id:number){
+    this.api.getPokemonByName(String(id)).then(
+    (res) =>{
+      this.nombre_cli=res.name
+      this.tipo_cli=res.types
+      this.fondo_pokemon=res.types[0].toString()
+      this.img_cli=res.sprites
+      this.id_cli_pokemons=res.id
+      this.img_cli_mostrar = this.img_cli["other"]["official-artwork"]["front_default"]
 
+      this.nombre_pokemon_cli=""
+      this.have_pokemon=true
+    }).catch(()=>{
+      alert("POKEMON NO ENCONTRADO")
+      this.nombre_pokemon_cli=""
+    })
+
+  }
+  info_tipo(){}
 
   constructor() {
  }

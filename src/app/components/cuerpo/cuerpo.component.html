@@ -9,7 +9,7 @@
         bg-slate-300
          rounded-lg m-h-64 p-2 transform hover:shadow-xl transition duration-300">
           <figure class="mb-2">
-            <img src="{{clienteservice.img_cli_mostrar}}" alt="" class="h-48 z-50 duration-150 ml-auto mr-auto hover:scale-110 drop-shadow-2xl " />
+            <img src="{{clienteservice.img_cli_mostrar}}" alt="" class="h-64 z-50 duration-150 ml-auto mr-auto hover:scale-125 drop-shadow-2xl " />
           </figure>
           <div>
             <h5 class="text-black text-2xl font-bold leading-none uppercase text-center">
@@ -21,69 +21,68 @@
                 {{clienteservice.nombre_cli}}</p>
             </h5>
           </div>
-          <div class="rounded-lg p-4 bg-white flex flex-col">
-
-              <div class="text-lg  font-light flex flex-row m-3">
+          <div class="rounded-lg p-4 bg-slate-900 flex flex-col">
+              <div class="text-lg font-light flex flex-row m-3">
                 @for (tipo of clienteservice.tipo_cli; track $index) {
                   @switch (tipo["type"]["name"]) {
                     @case ("fire") {
-                      <img class="w-8 z-50 bg-red-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="FUEGO">
+                      <img class="w-8 cursor-help z-50 bg-red-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="FUEGO">
                     }
                     @case ("bug") {
-                      <img class="w-8 z-50 bg-green-700 rounded-full m-1 p-2" src="../../../assets/img/tipos/bug.svg" title="INSECTO">
+                      <img class="w-8 z-50 cursor-help bg-green-700 rounded-full m-1 p-2" src="../../../assets/img/tipos/bug.svg" title="INSECTO">
                     }
                     @case ("dark") {
-                      <img class="w-8 z-50 bg-violet-950 rounded-full m-1 p-2" src="../../../assets/img/tipos/dark.svg" title="SINIESTRO">
+                      <img class="w-8 z-50 cursor-help bg-violet-950 rounded-full m-1 p-2" src="../../../assets/img/tipos/dark.svg" title="SINIESTRO">
                     }
                     @case ("dragon") {
-                      <img class="w-8 z-50 bg-cyan-600 rounded-full m-1 p-2" src="../../../assets/img/tipos/dragon.svg" title="DRAGON">
+                      <img class="w-8 z-50 bg-cyan-600 cursor-help rounded-full m-1 p-2" src="../../../assets/img/tipos/dragon.svg" title="DRAGON">
                     }
                     @case ("electric") {
-                      <img class="w-8 z-50 bg-yellow-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/electric.svg" title="ELECTRICO">
+                      <img class="w-8 z-50 bg-yellow-500 cursor-help rounded-full m-1 p-2" src="../../../assets/img/tipos/electric.svg" title="ELECTRICO">
                     }
                     @case ("fairy") {
-                      <img class="w-8 z-50 bg-pink-300 rounded-full m-1 p-2" src="../../../assets/img/tipos/fairy.svg" title="HADA">
+                      <img class="w-8 z-50 bg-pink-300 rounded-full cursor-help m-1 p-2" src="../../../assets/img/tipos/fairy.svg" title="HADA">
                     }
                     @case ("fighting") {
-                      <img class="w-8 z-50 bg-orange-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fighting.svg" title="LUCHADOR">
+                      <img class="w-8 z-50 bg-orange-500 rounded-full m-1 p-2 cursor-help" src="../../../assets/img/tipos/fighting.svg" title="LUCHADOR">
                     }
                     @case ("ghost") {
-                      <img class="w-8 z-50 bg-purple-600 rounded-full m-1 p-2" src="../../../assets/img/tipos/ghost.svg" title="FANTASMA">
+                      <img class="w-8 cursor-help z-50 bg-purple-600 rounded-full m-1 p-2" src="../../../assets/img/tipos/ghost.svg" title="FANTASMA">
                     }
                     @case ("grass") {
-                      <img class="w-8 z-50 bg-green-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/grass.svg" title="HIERBA">
+                      <img class="w-8 z-50 cursor-help bg-green-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/grass.svg" title="HIERBA">
                     }
                     @case ("ground") {
-                      <img class="w-8 z-50 bg-orange-700 rounded-full m-1 p-2" src="../../../assets/img/tipos/ground.svg" title="TIERRA">
+                      <img class="w-8 z-50 cursor-help bg-orange-700 rounded-full m-1 p-2" src="../../../assets/img/tipos/ground.svg" title="TIERRA">
                     }
                     @case ("ice") {
-                      <img class="w-8 z-50 bg-cyan-400 rounded-full m-1 p-2" src="../../../assets/img/tipos/ice.svg" title="HIELO">
+                      <img class="w-8 z-50 cursor-help bg-cyan-400 rounded-full m-1 p-2" src="../../../assets/img/tipos/ice.svg" title="HIELO">
                     }
                     @case ("normal") {
-                      <img class="w-8 z-50 bg-red-300 rounded-full m-1 p-2" src="../../../assets/img/tipos/normal.svg" title="NORMAL">
+                      <img class="w-8 z-50 bg-red-300 cursor-help rounded-full m-1 p-2" src="../../../assets/img/tipos/normal.svg" title="NORMAL">
                     }
                     @case ("poison") {
-                      <img class="w-8 z-50 bg-purple-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="VENENO">
+                      <img class="w-8 z-50 bg-purple-500 cursor-help rounded-full m-1 p-2" src="../../../assets/img/tipos/fire.svg" title="VENENO">
                     }
                     @case ("psychic") {
-                      <img class="w-8 z-50 bg-pink-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/psychic.svg" title="PSIQUICO">
+                      <img class="w-8 z-50 cursor-help bg-pink-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/psychic.svg" title="PSIQUICO">
                     }
                     @case ("rock") {
-                      <img class="w-8 z-50 bg-orange-950 rounded-full m-1 p-2" src="../../../assets/img/tipos/rock.svg" title="ROCK">
+                      <img class="w-8 z-50 cursor-help bg-orange-950 rounded-full m-1 p-2" src="../../../assets/img/tipos/rock.svg" title="ROCA">
                     }
                     @case ("steel") {
-                      <img class="w-8 z-50 bg-slate-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/steel.svg" title="HIERRO">
+                      <img class="w-8 z-50 bg-slate-500 cursor-help rounded-full m-1 p-2" src="../../../assets/img/tipos/steel.svg" title="HIERRO">
                     }
                     @case ("water") {
-                      <img class="w-8 z-50 bg-blue-500 rounded-full m-1 p-2" src="../../../assets/img/tipos/water.svg" title="AGUA">
+                      <img class="w-8 z-50 bg-blue-500 cursor-help rounded-full m-1 p-2" src="../../../assets/img/tipos/water.svg" title="AGUA">
                     }
                     @case ("flying") {
-                      <img class="w-8 z-50 bg-blue-200 rounded-full m-1 p-2" src="../../../assets/img/tipos/flying.svg" title="VOLADOR">
+                      <img class="w-8 z-50 bg-blue-200 cursor-help rounded-full m-1 p-2" src="../../../assets/img/tipos/flying.svg" title="VOLADOR">
                     }
                   }   
                 }
               </div>
-              <button href="javascript:;" class="rounded-full bg-purple-900 text-white hover:bg-white hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+              <button href="javascript:;" class="rounded-full bg-purple-900 text-white hover:bg-purple-700 hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                   <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -96,6 +95,4 @@
 </div>
 } @else {
   <p class="text-center mt-16 text-3xl font-bold rounded bg-white w-3/4 mx-auto"> INTRODUCE EL NOMBRE o <span class="text-red-500">ID</span> DE UN POKEMON PARA VER SUS CARACTERÍSTICAS</p>
-
 }
-

@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ClienteService } from '../../services/cliente.service';
 import { PokemonClient } from 'pokenode-ts';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-principal',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './principal.component.html'
 })
 

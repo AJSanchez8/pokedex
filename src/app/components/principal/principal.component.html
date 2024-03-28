@@ -1,11 +1,12 @@
 <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 m-8 gap-4">
     @for (pokemon of array_todos_pokemon; track $index) {
-      <div class="w-52 bg-white rounded overflow-hidden shadow-lg mx-auto">
+      <div routerLink="/pokemon" class="w-52 duration-150 cursor-pointer bg-white rounded overflow-hidden shadow-lg mx-auto hover:scale-105" (click)="clienterservice.info_nombre_api_con_id(pokemon.id)">
         <div class="px-6 py-4">
-          <div class="font-bold text-xl text-center mb-2 uppercase"><span class="text-slate-600 mr-2">#{{pokemon.id}}</span>{{pokemon.name}}</div>
+          
           <figure class="mb-2">
             <img src="{{pokemon.img}}" alt="" class="h-48 z-50 duration-150 ml-auto mr-auto hover:scale-110 drop-shadow-2xl " />
           </figure>
+          <div class="font-bold text-xl text-center mb-2 uppercase"><span class="text-slate-600 mr-2">#{{pokemon.id}}</span>{{pokemon.name}}</div>
           </div>
       </div>
 }
