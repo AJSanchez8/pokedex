@@ -1,13 +1,15 @@
+@if (modalservice.modal) {
+  <div class="fixed w-screen h-screen opacity-45 bg-blue-200 z-50" (click)="modalservice.close_modal()">
+    <p>Actualizando funcionalidad modal</p>
+  </div>
+  }
 @if (clienteservice.have_pokemon) {
 <div class="flex items-center" style="font-family: 'Muli', sans-serif;">
     <div class="container ml-auto mr-auto flex flex-wrap items-start">
       <div class="w-full pl-5 lg:pl-2 mb-4 text-center uppercase">
       </div>
       <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 mx-auto">
-          
-        <div class="
-        bg-slate-300
-         rounded-lg m-h-64 p-2 transform hover:shadow-xl transition duration-300">
+        <div class="bg-slate-300 rounded-lg m-h-64 p-2 transform hover:shadow-xl transition duration-300">
           <figure class="mb-2">
             <img src="{{clienteservice.img_cli_mostrar}}" alt="" class="h-64 z-50 duration-150 ml-auto mr-auto hover:scale-125 drop-shadow-2xl " />
           </figure>
@@ -82,7 +84,7 @@
                   }   
                 }
               </div>
-              <button href="javascript:;" class="rounded-full bg-purple-900 text-white hover:bg-purple-700 hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-200">
+              <button href="javascript:;" class="rounded-full bg-purple-900 text-white hover:bg-purple-700 hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-200" (click)="modalservice.open_modal()" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                   <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -96,3 +98,4 @@
 } @else {
   <p class="text-center mt-16 text-3xl font-bold rounded bg-white w-3/4 mx-auto"> INTRODUCE EL NOMBRE o <span class="text-red-500">ID</span> DE UN POKEMON PARA VER SUS CARACTERÍSTICAS</p>
 }
+

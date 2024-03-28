@@ -15,6 +15,7 @@ export class BusquedaComponent implements OnInit {
   tipos_api:any;
   url:string="https://pokeapi.co/api/v2/"
 
+
 clienteService = inject(ClienteService)
 http = inject(HttpClient)
 cli = inject(ClienteService)

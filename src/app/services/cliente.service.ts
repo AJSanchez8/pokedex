@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { PokemonClient, PokemonType,NamedAPIResource, TypePokemon } from 'pokenode-ts';
 import { HttpClient } from '@angular/common/http';
+import { ModalService } from './modal.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ClienteService {
 
   http=inject(HttpClient)
+  modalService = inject(ModalService)
 
   nombre_pokemon_cli:string="";
   nombre_cli:any="";
@@ -38,8 +40,9 @@ export class ClienteService {
   double_damage_from: NamedAPIResource[]=[];
   
 
+  
   info_nombre_api(){
-    this.api.getPokemonByName(this.nombre_pokemon_cli).then(
+    this.api.getPokemonByName(this.nombre_pokemon_cli.toLowerCase()).then(
     (res) =>{
       this.nombre_cli=res.name
       this.tipo_cli=res.types
@@ -54,7 +57,7 @@ export class ClienteService {
       alert("POKEMON NO ENCONTRADO")
       this.nombre_pokemon_cli=""
     })
-
+    this.modalService.modal=false
   }
   info_nombre_api_con_id(id:number){
     this.api.getPokemonByName(String(id)).then(
