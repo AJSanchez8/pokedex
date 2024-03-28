@@ -135,75 +135,75 @@ array_todos_pokemon: {id:number; name: string; img: string; }[] = [];
   elegir_imagen_tipo(tipo:string){
     switch (tipo) {
       case "fire": {
-        this.path_logo="../../../assets/img/tipos/fire.svg"
+        this.path_logo="./assets/img/tipos/fire.svg"
         break;
       }
       case "bug": {
-        this.path_logo="../../../assets/img/tipos/bug.svg"
+        this.path_logo="./assets/img/tipos/bug.svg"
         break;
       }
       case "dark":{
-        this.path_logo="../../../assets/img/tipos/dark.svg"
+        this.path_logo="./assets/img/tipos/dark.svg"
         break;
       }
       case "dragon": {
-        this.path_logo="../../../assets/img/tipos/dragon.svg"
+        this.path_logo="./assets/img/tipos/dragon.svg"
         break;
       }
       case "electric":{
-        this.path_logo="../../../assets/img/tipos/electric.svg"
+        this.path_logo="./assets/img/tipos/electric.svg"
         break;
       }
       case "fairy":{
-        this.path_logo="../../../assets/img/tipos/fairy.svg"
+        this.path_logo="./assets/img/tipos/fairy.svg"
         break;
       }
       case "fighting":{
-        this.path_logo="../../../assets/img/tipos/fighting.svg"
+        this.path_logo="./assets/img/tipos/fighting.svg"
         break;
       }
       case "ghost": {
-        this.path_logo="../../../assets/img/tipos/ghost.svg"
+        this.path_logo="./assets/img/tipos/ghost.svg"
         break;
       }
       case "grass": {
-        this.path_logo="../../../assets/img/tipos/grass.svg"
+        this.path_logo="./assets/img/tipos/grass.svg"
         break;
        }
       case "ground": {
-        this.path_logo="../../../assets/img/tipos/ground.svg"
+        this.path_logo="./assets/img/tipos/ground.svg"
         break;
       }
       case "ice":{
-        this.path_logo="../../../assets/img/tipos/ice.svg"
+        this.path_logo="./assets/img/tipos/ice.svg"
         break;
       }
       case "normal": {
-        this.path_logo="../../../assets/img/tipos/normal.svg"
+        this.path_logo="./assets/img/tipos/normal.svg"
         break;
       }
       case "poison": {
-        this.path_logo="../../../assets/img/tipos/poison.svg"
+        this.path_logo="./assets/img/tipos/poison.svg"
         break;
       }
       case "psychic": {
-        this.path_logo="../../../assets/img/tipos/psychic.svg"
+        this.path_logo="./assets/img/tipos/psychic.svg"
         break;
       }
       case "rock": {
-        this.path_logo="../../../assets/img/tipos/rock.svg"
+        this.path_logo="./assets/img/tipos/rock.svg"
         break;
       }
       case "steel": {
-        this.path_logo="../../../assets/img/tipos/steel.svg"
+        this.path_logo="./assets/img/tipos/steel.svg"
         break;
       }
       case "water": {
-        this.path_logo="../../../assets/img/tipos/water.svg"
+        this.path_logo="./assets/img/tipos/water.svg"
         break
       }
       case "flying": {
-        this.path_logo="../../../assets/img/tipos/flying.svg"
+        this.path_logo="./assets/img/tipos/flying.svg"
         break
       } 
     }   
