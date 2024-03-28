@@ -16,5 +16,8 @@ Al hacer click en la carta del Pokemon, podemos acceder a sus características
 
 En el boton de __"+"__ que aparece abajo, podrémos ver información más detallada. (peso, altura, tipo y tabla de daños, ademas si aqui pulsamos el boton movimientos nos aparece una tabla con los movimientos que aprende, el nivel en el que lo aprende y la forma de como lo aprende)
 
-Además tenemos una barra de búsqueda, en la que podrémos buscar los pokemons por su nombre o id, o el tipo (Información a cerca del tipo y los pokemons que tienen este tipo)
-![imagen2](./src/assets/img/readme/ej3.png)
+Además tenemos una barra de búsqueda, en la que podrémos buscar los pokemons por su nombre o id, o el tipo.
+![busqueda](./src/assets/img/readme/ej3.png)
+
+Al buscar por tipo, nos salen todos los daños que recibe y que realiza, y todos los pokemons de este tipo.
+![busqueda por tipos](./src/assets/img/readme/ej4.png)
