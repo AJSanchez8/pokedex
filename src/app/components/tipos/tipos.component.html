@@ -1,4 +1,4 @@
-<div class="mx-auto w-3/4 mt-6">
+<div class="  mt-6 md:w-3/4 md:mx-auto">
 <div class="relative sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -72,7 +72,7 @@
                 <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
                     Fuerte <strong>contra (x2)</strong>
                 </th>
-                <td class="px-3 py-2 flex flex-row justify-end">
+                <td class="px-3 py-2 grid grid-cols-2">
                 @for (doble_a of clienteservice.double_damage_to; track $index) {
                     
                     <img [className]="clienteservice.add_bg_color(doble_a.name)"  [src]="clienteservice.elegir_imagen_tipo(doble_a.name)" >
@@ -83,7 +83,7 @@
             <tr class="odd:bg-slate-700 odd:dark:bg-gray-900 even:bg-slate-950 even:dark:bg-gray-800 dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
                     Mitad de daño <strong>hacia (1/2)</strong>
-                </th><td class="px-3 py-2 flex flex-row justify-end">
+                </th><td class="px-3 py-2 grid grid-cols-2">
                 @for (mitad_a of clienteservice.half_damage_to; track $index) {
                     
                         <img [className]="clienteservice.add_bg_color(mitad_a.name)" [src]="clienteservice.elegir_imagen_tipo(mitad_a.name)" >
@@ -96,7 +96,7 @@
                 <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
                     <strong>NO</strong> hace daño a
                 </th>
-                <td class="px-3 py-2 flex flex-row justify-end">
+                <td class="px-3 py-2 grid grid-cols-2">
                 @for (no_a of clienteservice.no_damage_to; track $index) {
                     
                         <img [className]="clienteservice.add_bg_color(no_a.name)" [src]="clienteservice.elegir_imagen_tipo(no_a.name)" >
@@ -108,7 +108,7 @@
                 <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
                     <strong>Recibe (x2)</strong> de daño de
                 </th>
-                <td class="px-3 py-2 flex flex-row justify-end">
+                <td class="px-3 py-2 grid grid-cols-2">
                 @for (doble_de of clienteservice.double_damage_from; track $index) {
                     
                         <img [className]="clienteservice.add_bg_color(doble_de.name)" [src]="clienteservice.elegir_imagen_tipo(doble_de.name)" >
@@ -117,10 +117,10 @@
             </td>
             </tr>
             <tr class="odd:bg-slate-700 odd:dark:bg-gray-900 even:bg-slate-950 even:dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
+                <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white ">
                     <strong>Recible (1/2)</strong> la mitad de daño de
                 </th>
-                <td class="px-3 py-2 flex flex-row justify-end">
+                <td class="px-3 py-2 grid grid-cols-2">
                 @for (mitad_de of clienteservice.half_damage_from; track $index) {
                     
                         <img [className]="clienteservice.add_bg_color(mitad_de.name)" [src]="clienteservice.elegir_imagen_tipo(mitad_de.name)" >
@@ -131,7 +131,7 @@
                     <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
                     <strong>NO</strong> recibe de daño de
                 </th>
-                <td class="px-3 py-2 flex flex-row justify-end">                   
+                <td class="px-3 py-2 grid grid-cols-2">                   
                 @for (no_de of clienteservice.no_damage_from; track $index) {
                     
                         <img [className]="clienteservice.add_bg_color(no_de.name)" [src]="clienteservice.elegir_imagen_tipo(no_de.name)" >

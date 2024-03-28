@@ -1,6 +1,6 @@
 # Pokeapi
 
-Proyecto creado para práctica y muestra de conocimientos.
+Proyecto creado para práctica y muestra de conocimientos. Para visitar la web [Pokeamigo](https://ajsanchez8.github.io/pokedex/)
 
 La web ha sido creada con Angular17, y hemos consumido la API RESTful gratuita de [Pokemon](https://pokeapi.co/), ya que es una fuente de datos gratuita y muy completa.
 
