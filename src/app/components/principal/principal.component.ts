@@ -36,7 +36,7 @@ array_imagenes:any=[]
 pokemon_json:any
 id:number=0
 
-array_todos_pokemon: {id:number; name: string; img: string; }[] = [];
+array_todos_pokemon: {id:number; name: string; img: string; type:[] }[] = [];
 
 ngOnInit(): void {
 
@@ -61,6 +61,7 @@ ngOnInit(): void {
           id: this.id,
           name: this.nombre,
           img: this.img_pokemon,
+          type: this.pokemon_tipo
         }
         this.array_todos_pokemon.push(poke_info)
         

@@ -145,12 +145,74 @@
 </div>
 <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 m-8 gap-4">
     @for (pokemon of clienteservice.array_todos_pokemon; track $index) {
-      <div routerLink="/pokemon" class="w-52 duration-150 cursor-pointer bg-white rounded overflow-hidden shadow-lg mx-auto hover:scale-105" (click)="clienteservice.info_nombre_api_con_id(pokemon.id)">
+      <div routerLink="/pokemon" class="w-52 duration-150 p-1  cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg mx-auto hover:scale-105" (click)="clienteservice.info_nombre_api_con_id(pokemon.id)">
         <div class="px-6 py-4">          
           <figure class="mb-2">
             <img src="{{pokemon.img}}" alt="" class="h-48 z-50 duration-150 ml-auto mr-auto hover:scale-110 drop-shadow-2xl " />
           </figure>
           <div class="font-bold text-xl text-center mb-2 uppercase"><span class="text-slate-600 mr-2">#{{pokemon.id}}</span>{{pokemon.name}}</div>
+          </div>
+          <div class="rounded-lg bg-slate-900 justify-center flex flex-col">
+            <div class="flex flex-row  mx-auto m-3">
+              @for (tipo of pokemon.type; track $index) {
+                @switch (tipo["type"]["name"]) {
+                  @case ("fire") {
+                    <img class="w-8 cursor-help bg-red-500 rounded-full m-1 p-2" src="./assets/img/tipos/fire.svg" title="FUEGO">
+                  }
+                  @case ("bug") {
+                    <img class="w-8 cursor-help bg-green-700 rounded-full m-1 p-2" src="./assets/img/tipos/bug.svg" title="INSECTO">
+                  }
+                  @case ("dark") {
+                    <img class="w-8 cursor-help bg-violet-950 rounded-full m-1 p-2" src="./assets/img/tipos/dark.svg" title="SINIESTRO">
+                  }
+                  @case ("dragon") {
+                    <img class="w-8  bg-cyan-600 cursor-help rounded-full m-1 p-2" src="./assets/img/tipos/dragon.svg" title="DRAGON">
+                  }
+                  @case ("electric") {
+                    <img class="w-8 bg-yellow-500 cursor-help rounded-full m-1 p-2" src="./assets/img/tipos/electric.svg" title="ELECTRICO">
+                  }
+                  @case ("fairy") {
+                    <img class="w-8 bg-pink-300 rounded-full cursor-help m-1 p-2" src="./assets/img/tipos/fairy.svg" title="HADA">
+                  }
+                  @case ("fighting") {
+                    <img class="w-8 bg-orange-500 rounded-full m-1 p-2 cursor-help" src="./assets/img/tipos/fighting.svg" title="LUCHADOR">
+                  }
+                  @case ("ghost") {
+                    <img class="w-8 cursor-help bg-purple-600 rounded-full m-1 p-2" src="./assets/img/tipos/ghost.svg" title="FANTASMA">
+                  }
+                  @case ("grass") {
+                    <img class="w-8 cursor-help bg-green-500 rounded-full m-1 p-2" src="./assets/img/tipos/grass.svg" title="HIERBA">
+                  }
+                  @case ("ground") {
+                    <img class="w-8 cursor-help bg-orange-700 rounded-full m-1 p-2" src="./assets/img/tipos/ground.svg" title="TIERRA">
+                  }
+                  @case ("ice") {
+                    <img class="w-8 cursor-help bg-cyan-400 rounded-full m-1 p-2" src="./assets/img/tipos/ice.svg" title="HIELO">
+                  }
+                  @case ("normal") {
+                    <img class="w-8 bg-red-300 cursor-help rounded-full m-1 p-2" src="./assets/img/tipos/normal.svg" title="NORMAL">
+                  }
+                  @case ("poison") {
+                    <img class="w-8 bg-purple-500 cursor-help rounded-full m-1 p-2" src="./assets/img/tipos/fire.svg" title="VENENO">
+                  }
+                  @case ("psychic") {
+                    <img class="w-8 cursor-help bg-pink-500 rounded-full m-1 p-2" src="./assets/img/tipos/psychic.svg" title="PSIQUICO">
+                  }
+                  @case ("rock") {
+                    <img class="w-8 cursor-help bg-orange-950 rounded-full m-1 p-2" src="./assets/img/tipos/rock.svg" title="ROCA">
+                  }
+                  @case ("steel") {
+                    <img class="w-8 bg-slate-500 cursor-help rounded-full m-1 p-2" src="./assets/img/tipos/steel.svg" title="HIERRO">
+                  }
+                  @case ("water") {
+                    <img class="w-8 bg-blue-500 cursor-help rounded-full m-1 p-2" src="./assets/img/tipos/water.svg" title="AGUA">
+                  }
+                  @case ("flying") {
+                    <img class="w-8 bg-blue-200 cursor-help rounded-full m-1 p-2" src="./assets/img/tipos/flying.svg" title="VOLADOR">
+                  }
+                }   
+              }
+            </div>
           </div>
       </div>
 }

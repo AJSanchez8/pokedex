@@ -48,7 +48,7 @@ export class ClienteService {
 
   ataques: PokemonMove[]=[]
   ataques_mostrar:any
-
+  nombre_ataque_esp:any
   
   info_nombre_api(){
     this.api.getPokemonByName(this.nombre_pokemon_cli.toLowerCase()).then(
@@ -62,6 +62,26 @@ export class ClienteService {
       this.img_cli_mostrar = this.img_cli["other"]["official-artwork"]["front_default"]
       this.peso = res.weight
       this.altura= res.height
+      res.moves.map((respuesta_mov)=>{
+
+        this.http.get(respuesta_mov.move.url).subscribe((res_peticion_interna:any)=>{
+
+          let array_names:[]=[]
+          array_names=res_peticion_interna["names"]
+
+          array_names.forEach((res_primer_array)=>{
+            
+            if(res_primer_array["language"]["name"]=="es"){
+              this.nombre_ataque_esp = res_primer_array["name"]
+            }
+            
+            console.log(this.nombre_ataque_esp);
+            
+            
+          })
+        })
+      })
+      
       this.ataques=res.moves
 
       console.log(this.ataques);
@@ -74,6 +94,7 @@ export class ClienteService {
       this.nombre_pokemon_cli=""
     })
     this.modalService.modal=false
+    this.ataques=[]
   }
 
   info_nombre_api_con_id(id:number){
@@ -86,6 +107,9 @@ export class ClienteService {
       this.img_cli=res.sprites
       this.id_cli_pokemons=res.id
       this.img_cli_mostrar = this.img_cli["other"]["official-artwork"]["front_default"]
+      this.peso = res.weight
+      this.altura= res.height
+      this.ataques=res.moves
 
       this.nombre_pokemon_cli=""
       this.have_pokemon=true
@@ -110,7 +134,7 @@ pokemonData:any;
 array_imagenes:any=[]
 pokemon_json:any
 id:number=0
-array_todos_pokemon: {id:number; name: string; img: string; }[] = [];
+array_todos_pokemon: {id:number; name: string; img: string; type:[] }[] = [];
 
   info_tipo(){
     this.api.getTypeByName(this.tipo).then((response)=>{
@@ -129,6 +153,7 @@ array_todos_pokemon: {id:number; name: string; img: string; }[] = [];
             id: this.id,
             name: this.nombre,
             img: this.img_pokemon,
+            type: this.pokemon_tipo
           }
           this.array_todos_pokemon.push(poke_info)
           

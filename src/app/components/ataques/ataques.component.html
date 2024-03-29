@@ -1,8 +1,55 @@
-@for (ataque of clienteService.ataques; track $index) {
-    <h1>NOMBRE DEL ATAQUE :{{ataque["move"]["name"]}}</h1>
-    @for(versiones of ataque["version_group_details"]; track $index){
-        <p> NIVEL: {{versiones["level_learned_at"]}}</p>
-        <p> POKEMON: {{versiones["version_group"]["name"]}}</p>
-        <p> METODO DE APRENDIZAJE: {{versiones["move_learn_method"]["name"]}}</p>
+@if(modalService.ver_ataques){
+
+    <p class="bg-yellow-300 font-bold uppercase w-1/2 mx-auto mb-2 rounded-md text-center">RECOMIENDO HACER <span class="text-red-700">ctrl+f</span> para buscar</p>
+    <table class="mx-auto w-3/4 bg-white rounded-md mb-10">
+        <thead>
+            <th class="borde border-black">NOMBRE DEL ATAQUE</th>
+            <th class="borde border-black">VERSION</th>
+            <th class="borde border-black">NIVEL DE APRENDIZAJE</th>
+            <th class="borde border-black">MÉTODO DE APRENDIZAJE</th>
+        </thead>
+    
+    
+    @for (ataque of clienteService.ataques; track $index) {
+        <tbody>
+            <tr>
+                <td class="border-b-2 text-center text-2xl font-semibold bg-green-300 border-black">
+                    <p >{{ataque["move"]["name"]}}</p>
+                </td>
+                <td class=" border-b-2 border-black text-center">
+                    @for(versiones of ataque["version_group_details"]; track $index){
+                        <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["version_group"]["name"]}}</p>
+                    }
+                </td>
+                <td class="  border-b-2 border-black text-center ">
+                    @for(versiones of ataque["version_group_details"]; track $index){
+                        <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["level_learned_at"]}}</p>
+                    }
+                </td>
+                <td class="  border-b-2 border-black text-center">
+                    @for(versiones of ataque["version_group_details"]; track $index){
+                        <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["move_learn_method"]["name"]}}</p>
+                    }
+                </td>
+            </tr>
+        </tbody>
+    
     }
+    
+    </table>
 }
+@else {
+    <p class="text-center mt-16 text-3xl font-bold rounded bg-white w-3/4 mx-auto"> ACCEDE DESDE LA PESTAÑA <span class="text-red-500">ATQ.</span> DE UN POKEMON EN CONCRETO PARA VER SUS ATAQUES<span class="text-purple-600">(+)</span></p>
+    <p class="text-center mt-1 text-xl font-bold rounded bg-white w-1/4 mx-auto">Mira el ejemplo de abajo</p>
+    <div class="flex md:flex-row sm:flex-col">
+        <img class="mx-auto" src="./assets/img/ejemplo.png">
+        <img class="mx-auto" src="./assets/img/ej2.png">
+    </div>
+
+}
+
+<!--
+<p> METODO DE APRENDIZAJE: {{versiones["move_learn_method"]["name"]}}</p>
+<p> NIVEL: {{versiones["level_learned_at"]}}</p>
+-->
+<app-footer></app-footer>

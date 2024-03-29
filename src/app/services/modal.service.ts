@@ -14,7 +14,9 @@ export class ModalService {
     return this.modal=true
   }
   close_modal(){
-    return this.modal=false
+    this.ver_ataques=true
+    this.modal=false
+    return this.modal,this.ver_ataques
   }
 
   abrir_ataques(){
