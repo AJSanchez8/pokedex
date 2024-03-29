@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { PokemonClient, PokemonType,NamedAPIResource, TypePokemon } from 'pokenode-ts';
+import { PokemonClient, PokemonType,NamedAPIResource, TypePokemon, PokemonMove } from 'pokenode-ts';
 import { HttpClient } from '@angular/common/http';
 import { ModalService } from './modal.service';
 
@@ -7,6 +7,9 @@ import { ModalService } from './modal.service';
   providedIn: 'root'
 })
 export class ClienteService {
+
+  constructor() {
+  }
 
   http=inject(HttpClient)
   modalService = inject(ModalService)
@@ -23,6 +26,7 @@ export class ClienteService {
 
   api = new PokemonClient()
 
+
   // Tipos pokemon
   tipo:string=""
   array_tipos:[]=[];
@@ -38,18 +42,30 @@ export class ClienteService {
   half_damage_from: NamedAPIResource[]=[];
   /** A list of types that are very effective against this type */
   double_damage_from: NamedAPIResource[]=[];
-  
+
+  peso:number=0;
+  altura:number=0;
+
+  ataques: PokemonMove[]=[]
+  ataques_mostrar:any
 
   
   info_nombre_api(){
     this.api.getPokemonByName(this.nombre_pokemon_cli.toLowerCase()).then(
     (res) =>{
+
       this.nombre_cli=res.name
       this.tipo_cli=res.types
       this.fondo_pokemon=res.types[0].toString()
       this.img_cli=res.sprites
       this.id_cli_pokemons=res.id
       this.img_cli_mostrar = this.img_cli["other"]["official-artwork"]["front_default"]
+      this.peso = res.weight
+      this.altura= res.height
+      this.ataques=res.moves
+
+      console.log(this.ataques);
+      
 
       this.nombre_pokemon_cli=""
       this.have_pokemon=true
@@ -59,6 +75,7 @@ export class ClienteService {
     })
     this.modalService.modal=false
   }
+
   info_nombre_api_con_id(id:number){
     this.api.getPokemonByName(String(id)).then(
     (res) =>{
@@ -294,6 +311,7 @@ array_todos_pokemon: {id:number; name: string; img: string; }[] = [];
     }  
     return this.bg_color 
   }
-  constructor() {
- }
+
+
+
 }

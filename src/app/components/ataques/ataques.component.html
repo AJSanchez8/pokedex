@@ -1,0 +1,8 @@
+@for (ataque of clienteService.ataques; track $index) {
+    <h1>NOMBRE DEL ATAQUE :{{ataque["move"]["name"]}}</h1>
+    @for(versiones of ataque["version_group_details"]; track $index){
+        <p> NIVEL: {{versiones["level_learned_at"]}}</p>
+        <p> POKEMON: {{versiones["version_group"]["name"]}}</p>
+        <p> METODO DE APRENDIZAJE: {{versiones["move_learn_method"]["name"]}}</p>
+    }
+}

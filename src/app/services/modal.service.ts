@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -7,17 +8,22 @@ export class ModalService {
 
 
   modal:boolean=false
+  ver_ataques:boolean=false
 
   open_modal(){
-    this.modal=true
-    console.log(this.modal);
     return this.modal=true
   }
   close_modal(){
-    this.modal=false
-    console.log(this.modal);
     return this.modal=false
   }
+
+  abrir_ataques(){
+    return this.ver_ataques=true
+  }
+  cerrar_ataques(){
+    return this.ver_ataques=false
+  }
+
 
   constructor() { }
 }
