@@ -160,7 +160,7 @@ export class ClienteService {
       alert("POKEMON NO ENCONTRADO")
       this.nombre_pokemon_cli=""
     })
-
+    this.array_json_ataques=[]
   }
 
   carga_tipo:boolean=false;
