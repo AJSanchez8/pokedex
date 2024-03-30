@@ -98,7 +98,7 @@ export class AtaquesService {
         break;
       }
       case "tutor":{
-        this.metodo_aprendizaje="Enseñado por NPC"
+        this.metodo_aprendizaje="NPC"
         break;
       }
       case "machine": {

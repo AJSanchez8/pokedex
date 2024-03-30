@@ -40,17 +40,12 @@
     </table>
 }
 @else {
-    <p class="text-center mt-16 text-3xl font-bold rounded bg-white w-3/4 mx-auto"> ACCEDE DESDE LA PESTAÑA <span class="text-red-500">ATQ.</span> DE UN POKEMON EN CONCRETO PARA VER SUS ATAQUES<span class="text-purple-600">(+)</span></p>
+    <p class="text-center mt-16 text-3xl font-bold rounded bg-white w-3/4 mx-auto"> ACCEDE DESDE LA PESTAÑA <span class="text-red-500">ATQ.</span> DE UN POKEMON PARA VER SUS ATAQUES<p>
     <p class="text-center mt-1 text-xl font-bold rounded bg-white w-1/4 mx-auto">Mira el ejemplo de abajo</p>
     <div class="flex md:flex-row sm:flex-col">
-        <img class="mx-auto" src="./assets/img/ejemplo.png">
-        <img class="mx-auto" src="./assets/img/ej2.png">
+        <a routerLink="/"><img class="mx-auto" src="./assets/img/ej.png"></a>
     </div>
 
 }
 
-<!--
-<p> METODO DE APRENDIZAJE: {{versiones["move_learn_method"]["name"]}}</p>
-<p> NIVEL: {{versiones["level_learned_at"]}}</p>
--->
 <app-footer></app-footer>
