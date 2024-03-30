@@ -1,8 +1,4 @@
-@if (modalservice.modal) {
-  <app-modal></app-modal>
-  }@else {
-
-    @if (clienteservice.have_pokemon) {
+ @if (clienteservice.have_pokemon) {
       <div class="flex items-center" style="font-family: 'Muli', sans-serif;">
           <div class="container ml-auto mr-auto flex flex-wrap items-start">
             <div class="w-full pl-5 lg:pl-2 mb-4 text-center uppercase">
@@ -23,7 +19,7 @@
                   </h5>
                 </div>
                 <div class="rounded-lg p-4 bg-slate-900 flex flex-col">
-                    <div class="text-lg font-light flex flex-row m-3">
+                    <div class="text-lg font-light flex flex-row mx-auto m-3">
                       @for (tipo of clienteservice.tipo_cli; track $index) {
                         @switch (tipo["type"]["name"]) {
                           @case ("fire") {
@@ -83,12 +79,34 @@
                         }   
                       }
                     </div>
-                    <button href="javascript:;" class="rounded-full bg-purple-900 text-white hover:bg-purple-700 hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-200" (click)="modalservice.open_modal()" >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </button>
+                    <div class="grid grid-cols-2 gap-1 m-2">
+                      @for (stat of clienteservice.stats; track $index) {
+                        @switch (stat.stat.name) {
+                          @case ("hp") {
+                            <p class="text-white font-semibold">HP:</p><p class="text-white font-semibold"> {{stat.base_stat}}</p>
+                          }
+                          @case ("attack") {
+                            <p class="text-white font-semibold">ATAQUE:</p><p class="text-white font-semibold"> {{stat.base_stat}}</p>
+                          }
+                          @case ("defense") {
+                            <p class="text-white font-semibold">DEFENSA:</p><p class="text-white font-semibold"> {{stat.base_stat}}</p>
+                          }
+                          @case ("special-attack") {
+                            <p class="text-white font-semibold">ATQ.ESP:</p><p class="text-white font-semibold"> {{stat.base_stat}}</p>
+                          }
+                          @case ("special-defense") {
+                            <p class="text-white font-semibold">DEF.ESP:</p><p class="text-white font-semibold"> {{stat.base_stat}}</p>
+                          }
+                          @case ("speed") {
+                            <p class="text-white font-semibold">VEL:</p><p class="text-white font-semibold"> {{stat.base_stat}}</p>
+                          }
+                        }
+                        
+                          
+                        }
+                      
+                    </div>
+                    <button type="button" routerLink="/ataques" (click)="modalservice.abrir_ataques()" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm p-2 text-center me-2 mb-2">ATQ.</button>
                   </div>
               </div>
             </div>
@@ -97,8 +115,7 @@
       } @else {
         <p class="text-center mt-16 text-3xl font-bold rounded bg-white w-3/4 mx-auto"> INTRODUCE EL NOMBRE o <span class="text-red-500">ID</span> DE UN POKEMON PARA VER SUS CARACTERÍSTICAS</p>
       }
-  }
-  @if (!modalservice.modal) {
-    <app-footer></app-footer>
-  }
+
+<app-footer></app-footer>
+
   

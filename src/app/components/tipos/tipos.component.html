@@ -142,10 +142,10 @@
         </tbody>
     </table>
 </div>
-</div>
+</div>-
 <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 m-8 gap-4">
     @for (pokemon of clienteservice.array_todos_pokemon; track $index) {
-      <div routerLink="/pokemon" class="w-52 duration-150 p-1  cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg mx-auto hover:scale-105" (click)="clienteservice.info_nombre_api_con_id(pokemon.id)">
+      <div routerLink="/pokemon" class="w-56 duration-150 p-1  cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg mx-auto hover:scale-105" (click)="clienteservice.info_nombre_api_con_id(pokemon.id)">
         <div class="px-6 py-4">          
           <figure class="mb-2">
             <img src="{{pokemon.img}}" alt="" class="h-48 z-50 duration-150 ml-auto mr-auto hover:scale-110 drop-shadow-2xl " />

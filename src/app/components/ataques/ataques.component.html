@@ -10,27 +10,18 @@
         </thead>
     
     
-    @for (ataque of clienteService.ataques; track $index) {
+    @for (ataque of clienteService.array_json_ataques; track $index) {
         <tbody>
             <tr>
                 <td class="border-b-2 text-center text-2xl font-semibold bg-green-300 border-black">
-                    <p >{{ataque["move"]["name"]}}</p>
+                    <p >{{ataque.name}}</p>
                 </td>
                 <td class=" border-b-2 border-black text-center">
-                    @for(versiones of ataque["version_group_details"]; track $index){
+                    @for(versiones of ataque.version; track $index){
                         <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["version_group"]["name"]}}</p>
                     }
                 </td>
-                <td class="  border-b-2 border-black text-center ">
-                    @for(versiones of ataque["version_group_details"]; track $index){
-                        <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["level_learned_at"]}}</p>
-                    }
-                </td>
-                <td class="  border-b-2 border-black text-center">
-                    @for(versiones of ataque["version_group_details"]; track $index){
-                        <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["move_learn_method"]["name"]}}</p>
-                    }
-                </td>
+
             </tr>
         </tbody>
     

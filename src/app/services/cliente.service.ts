@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { PokemonClient, PokemonType,NamedAPIResource, TypePokemon, PokemonMove } from 'pokenode-ts';
+import { PokemonClient, PokemonType,NamedAPIResource, TypePokemon, PokemonMove, PokemonStat, PokemonMoveVersion } from 'pokenode-ts';
 import { HttpClient } from '@angular/common/http';
 import { ModalService } from './modal.service';
 
@@ -47,8 +47,12 @@ export class ClienteService {
   altura:number=0;
 
   ataques: PokemonMove[]=[]
+  stats: PokemonStat[]=[]
   ataques_mostrar:any
   nombre_ataque_esp:any
+
+  json_ataque_esp_desc:any
+  array_json_ataques:{name: any; version: PokemonMoveVersion[];}[]=[]
   
   info_nombre_api(){
     this.api.getPokemonByName(this.nombre_pokemon_cli.toLowerCase()).then(
@@ -62,29 +66,36 @@ export class ClienteService {
       this.img_cli_mostrar = this.img_cli["other"]["official-artwork"]["front_default"]
       this.peso = res.weight
       this.altura= res.height
+      this.stats = res.stats
+    
+      
+      // Recorremos para sacar los nombres de las habilidades en español, tenemos que ver si lo podemos comprar mediante url para que el nombre y los datos esten bien
       res.moves.map((respuesta_mov)=>{
-
+        
         this.http.get(respuesta_mov.move.url).subscribe((res_peticion_interna:any)=>{
 
           let array_names:[]=[]
           array_names=res_peticion_interna["names"]
-
+          
           array_names.forEach((res_primer_array)=>{
-            
+
             if(res_primer_array["language"]["name"]=="es"){
               this.nombre_ataque_esp = res_primer_array["name"]
             }
-            
-            console.log(this.nombre_ataque_esp);
-            
-            
           })
+          this.json_ataque_esp_desc={
+            name: this.nombre_ataque_esp,
+            version: respuesta_mov.version_group_details,
+
+          }
+          this.array_json_ataques.push(this.json_ataque_esp_desc)
+          
         })
       })
-      
+      console.log(this.array_json_ataques);
       this.ataques=res.moves
 
-      console.log(this.ataques);
+  
       
 
       this.nombre_pokemon_cli=""
