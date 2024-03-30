@@ -1,12 +1,12 @@
 @if(modalService.ver_ataques){
 
     <p class="bg-yellow-300 font-bold uppercase w-1/2 mx-auto mb-2 rounded-md text-center">RECOMIENDO HACER <span class="text-red-700">ctrl+f</span> para buscar</p>
-    <table class="mx-auto sm:w-auto sm:m-2 w-3/4 bg-white rounded-md mb-10">
+    <table class=" bg-white rounded-md mb-10 mx-auto">
         <thead>
-            <th class="borde border-black">NOMBRE DEL ATAQUE</th>
-            <th class="borde border-black">VERSION</th>
-            <th class="borde border-black">NIVEL DE APRENDIZAJE</th>
-            <th class="borde border-black">MÉTODO DE APRENDIZAJE</th>
+            <th class="borde border-black">NOMBRE</th>
+            <th class="borde border-black">EDICIÓN</th>
+            <th class="borde border-black">NIVEL</th>
+            <th class="borde border-black">MÉTODO</th>
         </thead>
     
     
@@ -18,12 +18,13 @@
                 </td>
                 <td class=" border-b-2 border-black text-center">
                     @for(versiones of ataque.version; track $index){
-                        <p class="odd:bg-slate-400 truncate text-white font-semibold even:bg-slate-700"> {{ataquesService.traducir_version(versiones["version_group"]["name"])}}</p>
+                        <p class="odd:bg-slate-400  text-white font-semibold even:bg-slate-700"> {{ataquesService.traducir_version(versiones["version_group"]["name"])}}</p>
                     }
                 </td>
                 <td class="  border-b-2 border-black text-center ">
                     @for(versiones of ataque.version; track $index){
                         <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["level_learned_at"]}}</p>
+                        
                     }
                 </td>
                 <td class="  border-b-2 border-black text-center">

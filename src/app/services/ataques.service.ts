@@ -12,75 +12,75 @@ export class AtaquesService {
   traducir_version(nombre:string){
     switch (nombre) {
       case "red-blue": {
-        this.nombre_version="Pokemon rojo y Pokemon azul"
+        this.nombre_version="Rojo\nAzul"
         break;
       }
       case "yellow": {
-        this.nombre_version="Pokemon Amarillo"
+        this.nombre_version="Amarillo"
         break;
       }
       case "gold-silver":{
-        this.nombre_version="Pokemon oro y Pokemon plata"
+        this.nombre_version="Oro\nPlata"
         break;
       }
       case "crystal": {
-        this.nombre_version="Pokemon cristal"
+        this.nombre_version="Cristal"
         break;
       }
       case "ruby-sapphire":{
-        this.nombre_version="Pokemon rubý y Pokemon zafiro"
+        this.nombre_version="Rubí\nZafiro"
         break;
       }
       case "firered-leafgreen":{
-        this.nombre_version="Pokemon rojo-fuego y Pokemon verde-hoja"
+        this.nombre_version="Rojo-fuego\nVerde-hoja"
         break;
       }
       case "platinum":{
-        this.nombre_version="Pokemon platino"
+        this.nombre_version="Platino"
         break;
       }
       case "heartgold-soulsilver": {
-        this.nombre_version="Pokemon oro-heartgold y Pokemon plata-soulsilver"
+        this.nombre_version="Oro-heartgold\nPlata-soulsilver"
         break;
       }
       case "black-white": {
-        this.nombre_version="Pokemon negro y Pokemon blanco"
+        this.nombre_version="Negro\nBlanco"
         break;
        }
       case "colosseum": {
-        this.nombre_version="Pokemon colosseum"
+        this.nombre_version="Colosseum"
         break;
       }
       case "xd":{
-        this.nombre_version="Pokemon xd"
+        this.nombre_version="XD"
         break;
       }
       case "black-2-white-2": {
-        this.nombre_version="Pokemon negro 2 y Pokemon blanco 2"
+        this.nombre_version="Negro-2\nBlanco-2"
         break;
       }
       case "x-y": {
-        this.nombre_version="Pokemon X y Pokemon Y "
+        this.nombre_version="X - Y "
         break;
       }
       case "omega-ruby-alpha-sapphire": {
-        this.nombre_version="Pokemon rubí-omega y Pokemon zafiro-alpha"
+        this.nombre_version="Rubí-omega\nZafiro-alpha"
         break;
       }
       case "sun-moon": {
-        this.nombre_version="Pokemon sol y Pokemon luna"
+        this.nombre_version="Sol\nLuna"
         break;
       }
       case "ultra-sun-ultra-moon": {
-        this.nombre_version="Pokemon Ultrasol y Pokemon Ultraluna"
+        this.nombre_version="Ultrasol\nUltraluna"
         break;
       }
       case "lets-go-pikachu-lets-go-eevee": {
-        this.nombre_version="Pokémon Let's Go, Pikachu! y Let's Go, Eevee!"
+        this.nombre_version="Let's Go"
         break
       }
       case "sword-shield": {
-        this.nombre_version="Pokémon Espada y Pokémon Escudo"
+        this.nombre_version="Espada\nEscudo"
         break
       } 
     }   
