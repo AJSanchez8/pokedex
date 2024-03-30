@@ -83,6 +83,8 @@ export class ClienteService {
               this.nombre_ataque_esp = res_primer_array["name"]
             }
           })
+
+
           this.json_ataque_esp_desc={
             name: this.nombre_ataque_esp,
             version: respuesta_mov.version_group_details,
@@ -104,6 +106,7 @@ export class ClienteService {
       alert("POKEMON NO ENCONTRADO")
       this.nombre_pokemon_cli=""
     })
+    this.array_json_ataques=[]
     this.modalService.modal=false
     this.ataques=[]
   }
