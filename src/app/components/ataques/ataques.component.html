@@ -13,23 +13,23 @@
     @for (ataque of clienteService.array_json_ataques; track $index) {
         <tbody>
             <tr>
-                <td class="border-b-2 text-center text-2xl font-semibold bg-green-300 border-black">
+                <td class="border-b-2 text-center text-l font-semibold bg-green-300 border-black">
                     <p >{{ataque.name}}</p>
                 </td>
                 <td class=" border-b-2 border-black text-center">
                     @for(versiones of ataque.version; track $index){
-                        <p class="odd:bg-slate-400  text-white font-semibold even:bg-slate-700"> {{ataquesService.traducir_version(versiones["version_group"]["name"])}}</p>
+                        <p class="odd:bg-slate-400 p-1 text-white even:bg-slate-700 "> {{ataquesService.traducir_version(versiones["version_group"]["name"])}}</p>
                     }
                 </td>
                 <td class="  border-b-2 border-black text-center ">
                     @for(versiones of ataque.version; track $index){
-                        <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{versiones["level_learned_at"]}}</p>
+                        <p class="odd:bg-slate-400 text-white p-1 even:bg-slate-700">{{versiones["level_learned_at"]}}</p>
                         
                     }
                 </td>
                 <td class="  border-b-2 border-black text-center">
                     @for(versiones of ataque.version; track $index){
-                        <p class="odd:bg-slate-400 text-white font-semibold even:bg-slate-700">{{ataquesService.traducir_metodo(versiones["move_learn_method"]["name"])}}</p>
+                        <p class="odd:bg-slate-400 text-white p-1 even:bg-slate-700">{{ataquesService.traducir_metodo(versiones["move_learn_method"]["name"])}}</p>
                     }
                 </td>
             </tr>
